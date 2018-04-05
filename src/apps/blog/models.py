@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+# Criaremos uma classe nomeada: "Category", herdando da classe Model
+class Category(models.Model):
+	name = models.CharField(max_length=255)
+
