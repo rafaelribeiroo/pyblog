@@ -1,6 +1,15 @@
-# from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render
+# from .models import Category
 
 
 def home(request):
-    return HttpResponse("Iniciando o blog")
+    name = 'Rafael Ribeiro'
+    languages = ['Python', 'PHP', 'Java', 'Ruby']
+
+    context = {
+        'name': name,
+        'languages': languages,
+    }
+
+    # Category.objects.create(name="Python")
+    return render(request, 'home.html', context)
