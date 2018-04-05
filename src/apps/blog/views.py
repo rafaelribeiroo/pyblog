@@ -4,15 +4,17 @@ from .models import Category
 
 def home(request):
     name = 'Rafael Ribeiro'
-    languages = ['Python', 'PHP', 'Java', 'Ruby']
+    languages = ['PHP', 'Java', 'Ruby', 'Go']
+    for category in languages:
+        Category.objects.create(name=languages)
 
-    # Category.objects.create(name="Python");
-    categories = Category.objects.all()
+    # Category.objects.create(name="Python")
+    # categories = Category.objects.filter(id="any").delete()
+    all_categories = Category.objects.all()
 
     context = {
         'name': name,
-        'languages': languages,
-        'categories': categories,
+        'categories': all_categories,
     }
 
     return render(request, 'home.html', context)
