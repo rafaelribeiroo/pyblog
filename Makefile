@@ -7,9 +7,11 @@ run:
 
 migrate:
 	python manage.py migrate
+	python manage.py migrate blog
 
 migrations:
 	python manage.py makemigrations
+	python manage.py makemigrations blog
 
 user:
 	python manage.py createsuperuser
